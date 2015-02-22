@@ -23,10 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
 ## is already stored in memory (utilizing the the result of the above function) and in
 ## the result of the above function is passed as the argument.
 
-cacheSolve <- function(x, ...) {
+cacheMatrix <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   result<-x$getInverse()
   if(!is.null(result)){
+    message("Data already in cache");
     return(result);
   }
   data<-x$get();
